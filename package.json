@@ -4,8 +4,10 @@
   "description": "{{description}}",
   "private": true,
   "dependencies": {
-    "midway": "^1.0.0",
-    "egg-scripts": "^2.10.0"
+    "egg-cors": "^2.2.3",
+    "egg-scripts": "^2.10.0",
+    "egg-socket.io": "^4.1.6",
+    "midway": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
@@ -14,17 +16,17 @@
     "egg-ci": "^1.8.0",
     "midway-bin": "1",
     "midway-mock": "1",
-    "tslib": "^1.8.1",
-    "tslint-midway-contrib": "1",
     "ts-node": "^8.3.0",
+    "tslib": "^1.8.1",
     "tslint": "^5.11.0",
+    "tslint-midway-contrib": "1",
     "typescript": "^3.5.0"
   },
   "engines": {
     "node": ">=10.16.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=midway-server-chat-backend --framework=midway --ts",
+    "start": "egg-scripts start --daemon --title=midway-server-chat-backend --framework=midway --ts --sticky",
     "stop": "egg-scripts stop --title=midway-server-chat-backend",
     "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
     "clean": "midway-bin clean",
